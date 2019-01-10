@@ -10,15 +10,14 @@ install:
 - sudo apt install -y qemu qemu-user-static qemu-user binfmt-support
 
 script:
-- export DOMOTICZ_VERSION=$(curl https://releases.domoticz.com/releases/downloads.php | grep -oP '\d.\d{4}' | tail -1)
 # prepare qemu
 - docker run --rm --privileged multiarch/qemu-user-static:register --reset
 # build image
-- docker build -t gmaslowski/rpi-domoticz:${DOMOTICZ_VERSION}-arm .
+- docker build -t gmaslowski/rpi-cron:latest-arm .
 # push image
 - >
   if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
     docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
-    docker push gmaslowski/rpi-domoticz:${DOMOTICZ_VERSION}-arm
-    docker run --rm -ti weshigbee/manifest-tool --username $DOCKER_USER --password $DOCKER_PASS push from-args --platforms linux/arm --target gmaslowski/rpi-domoticz:$DOMOTICZ_VERSION --template gmaslowski/rpi-domoticz:${DOMOTICZ_VERSION}-ARCH
+    docker push gmaslowski/rpi-cron:latest-arm
+    docker run --rm -ti weshigbee/manifest-tool --username $DOCKER_USER --password $DOCKER_PASS push from-args --platforms linux/arm --target gmaslowski/rpi-cron:latest --template gmaslowski/rpi-cron:latest-ARCH
   fi
