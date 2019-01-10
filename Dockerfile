@@ -1,8 +1,7 @@
-FROM resin/rpi-raspbian:jessie
+FROM gmaslowski/rpi-cron:latest
 MAINTAINER Greg Maslowski <gregmaslowski@gmail.com>
 
-RUN apt-get update
-RUN apt-get upgrade
-RUN apt-get install cron
+RUN apt-get update && \
+    apt-get upgrade && \
+    apt-get install -f speedtest-cli
 
-CMD [ "cron", "-f" ]
