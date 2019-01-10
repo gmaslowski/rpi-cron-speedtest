@@ -1,4 +1,4 @@
-FROM gmaslowski/rpi-cron:latest
+FROM gmaslowski/rpi-cron:latest-arm
 MAINTAINER Greg Maslowski <gregmaslowski@gmail.com>
 
 RUN apt-get update && \
