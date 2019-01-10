@@ -1,8 +1,8 @@
-[![Build Status](https://travis-ci.org/gmaslowski/rpi-domoticz.svg?branch=master)](https://travis-ci.org/gmaslowski/rpi-domoticz)
+[![Build Status](https://travis-ci.org/gmaslowski/rpi-cron.svg?branch=master)](https://travis-ci.org/gmaslowski/rpi-cron)
 
-rpi-domoticz
-============
+rpi-cron
+========
 
-This project aims to dockerize [Domoticz Home Automation](https://domoticz.com) for [RaspberryPi](https://www.raspberrypi.org/)
+This project aims to have a core cron docker image for [RaspberryPi](https://www.raspberrypi.org/)
 
-The images can be found at: [https://hub.docker.com/r/gmaslowski/rpi-domoticz/](https://hub.docker.com/r/gmaslowski/rpi-domoticz/)
+The images can be found at: [https://hub.docker.com/r/gmaslowski/rpi-cron/](https://hub.docker.com/r/gmaslowski/rpi-cron/)
